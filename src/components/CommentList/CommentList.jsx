@@ -1,4 +1,5 @@
 import { CommentInfo } from '../CommentInfo/index';
+import './CommentList.scss';
 
 export const CommentList = () => (
   <div className="CommentList">
@@ -36,6 +37,5 @@ export const CommentList = () => (
         ratione
       </div>
     </div>
-
   </div>
 );

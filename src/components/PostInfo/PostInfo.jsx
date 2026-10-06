@@ -1,5 +1,6 @@
 import { CommentList } from '../CommentList/index';
 import { UserInfo } from '../UserInfo/index';
+import './PostInfo.scss';
 
 export const PostInfo = () => (
   // <div className="PostInfo">
@@ -35,9 +36,9 @@ export const PostInfo = () => (
       </p>
     </div>
     <p className="PostInfo__body">
-      deserunt eos nobis asperiores et hic est debitis repellat molestiae
-      optio nihil ratione ut eos beatae quibusdam distinctio maiores earum
-      voluptates et aut adipisci ea maiores voluptas maxime
+      deserunt eos nobis asperiores et hic est debitis repellat molestiae optio
+      nihil ratione ut eos beatae quibusdam distinctio maiores earum voluptates
+      et aut adipisci ea maiores voluptas maxime
     </p>
 
     <CommentList />

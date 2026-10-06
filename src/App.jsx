@@ -5,7 +5,7 @@ import postsFromServer from './api/posts.json';
 import commentsFromServer from './api/comments.json';
 import usersFromServer from './api/users.json';
 
-const posts = postsFromServer.map((post) => ({
+const posts = postsFromServer.map(post => ({
   ...post,
   user: usersFromServer.find(user => user.id === post.userId),
   comments: commentsFromServer.filter(comment => comment.postId === post.id),
@@ -109,6 +109,5 @@ export const App = () => (
         </div>
       </div>
     </div> */}
-
   </section>
 );

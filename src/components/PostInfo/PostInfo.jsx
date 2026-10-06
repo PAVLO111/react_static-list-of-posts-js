@@ -2,7 +2,7 @@ import { CommentList } from '../CommentList/index';
 import { UserInfo } from '../UserInfo/index';
 import './PostInfo.scss';
 
-export const PostInfo = () => (
+export const PostInfo = ({ post }) => (
   // <div className="PostInfo">
   //   <div className="PostInfo__header">
   //     <h3 className="PostInfo__title">qui est esse</h3>
@@ -24,23 +24,24 @@ export const PostInfo = () => (
 
   <div className="PostInfo">
     <div className="PostInfo__header">
-      <h3 className="PostInfo__title">doloremque illum aliquid sunt</h3>
+      <h3 className="PostInfo__title">{post.title}</h3>
       <p>
         {' Posted by  '}
 
-        <UserInfo />
+        <UserInfo user={post.user} />
 
         {/* <a className="UserInfo" href="mailto:Julianne.OConner@kory.org">
           Patricia Lebsack
         </a> */}
       </p>
     </div>
-    <p className="PostInfo__body">
-      deserunt eos nobis asperiores et hic est debitis repellat molestiae optio
-      nihil ratione ut eos beatae quibusdam distinctio maiores earum voluptates
-      et aut adipisci ea maiores voluptas maxime
-    </p>
 
-    <CommentList />
+    <p className="PostInfo__body">{post.body}</p>
+
+    <CommentList comments={post.comments} />
+
+    {/* {comments.map(comment => (
+      <CommentList key={comment.id} comment={comment} />
+    ))} */}
   </div>
 );

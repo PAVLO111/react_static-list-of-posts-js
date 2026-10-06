@@ -1,15 +1,21 @@
 import './App.scss';
 import { PostList } from './components/PostList/index';
 
-// import postsFromServer from './api/posts.json';
-// import commentsFromServer from './api/comments.json';
-// import usersFromServer from './api/users.json';
+import postsFromServer from './api/posts.json';
+import commentsFromServer from './api/comments.json';
+import usersFromServer from './api/users.json';
+
+const posts = postsFromServer.map((post) => ({
+  ...post,
+  user: usersFromServer.find(user => user.id === post.userId),
+  comments: commentsFromServer.filter(comment => comment.postId === post.id),
+}));
 
 export const App = () => (
   <section className="App">
     <h1 className="App__title">Static list of posts</h1>
 
-    <PostList />
+    <PostList posts={posts} />
 
     {/* <div className="PostList">
       <div className="PostInfo">
@@ -103,5 +109,6 @@ export const App = () => (
         </div>
       </div>
     </div> */}
+
   </section>
 );

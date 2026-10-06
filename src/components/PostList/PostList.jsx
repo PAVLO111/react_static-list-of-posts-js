@@ -1,11 +1,14 @@
 import { PostInfo } from '../PostInfo/PostInfo';
 
-export const PostList = () => (
+export const PostList = ({ posts }) => (
   <div className="PostList">
-    <PostInfo />
+    {/* {console.log(posts)}; */} {/* check */}
 
-    
-    <div className="PostInfo">
+    {posts.map(post => (
+      <PostInfo key={post.id} post={post} />
+    ))}
+
+    {/* <div className="PostInfo">
       <div className="PostInfo__header">
         <h3 className="PostInfo__title">doloremque illum aliquid sunt</h3>
         <p>

@@ -1,11 +1,19 @@
 import { CommentInfo } from '../CommentInfo/index';
 import './CommentList.scss';
 
-export const CommentList = () => (
+export const CommentList = ({ comments }) => (
   <div className="CommentList">
-    <CommentInfo />
 
-    <div className="CommentInfo">
+    {comments.map(comment => (
+      <CommentInfo key={comment.id} comment={comment} />
+    ))}
+
+
+
+
+
+
+    {/* <div className="CommentInfo">
       <div className="CommentInfo__title">
         <strong className="CommentInfo__name">pariatur omnis in</strong>
         {' by '}
@@ -36,6 +44,6 @@ export const CommentList = () => (
         maiores nam est cum et ducimus et vero voluptates excepturi deleniti
         ratione
       </div>
-    </div>
+    </div> */}
   </div>
 );
